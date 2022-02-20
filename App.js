@@ -1,11 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import tw from 'tailwind-react-native-classnames';
+import NavigationBar from './Components/NavigationBar';
+import Home from './Screens/Home';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={[tw`pt-4`, {flex:1}]}>
+        <Home/>
+      </View>
+      <View style={{flex:0}}>
+        <NavigationBar/>
+      </View>
     </View>
   );
 }
@@ -13,8 +20,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+    marginTop: 50
+    // paddingHorizontal: 30,
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
